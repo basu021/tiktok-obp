@@ -35,13 +35,18 @@ echo
 }
 
 
-#update() {
-
-#cd ..
-#rm -rf tiktok-obp
+update() {
 
 
-#}
+cd ..
+
+rm -rf tiktok-obp
+
+git clone https://www.github.com/basu021/tiktok-obp.git
+
+figlet Done
+
+}
 
 menu() {
 
